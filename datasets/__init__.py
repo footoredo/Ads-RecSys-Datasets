@@ -4,7 +4,8 @@ from .Avazu import Avazu
 # from .Huawei import Huawei
 from .Criteo_all import Criteo_all
 from .Criteo_Challenge import Criteo_Challenge
-
+from .ml100k import ml100k
+from .ml1m import ml1m
 
 def as_dataset(data_name, initialized=True):
     data_name = data_name.lower()
@@ -20,5 +21,9 @@ def as_dataset(data_name, initialized=True):
         return Criteo_all(initialized=initialized, num_of_days=16)
     elif data_name == 'criteo_challenge':
         return Criteo_Challenge(initialized=initialized)
+    elif data_name == 'movielens':
+        return MovieLens(initialized=initialized)
+    elif data_name == 'ml1m':
+        return MovieLens(initialized=initialized)
     # elif data_name == 'huawei':
     #     return Huawei(initialized=initialized)
